@@ -1,0 +1,30 @@
+# === Android / Gradle ===
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+android-app/app/build/
+android-app/build/
+android-app/.gradle/
+
+# === Arduino / PlatformIO ===
+.pio/
+.vscode/
+*.hex
+*.bin
+
+# === OS files ===
+Thumbs.db
+
+# === Editor ===
+*.swp
+*.bak
