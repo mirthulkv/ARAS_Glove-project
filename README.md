@@ -103,7 +103,7 @@ ARAS integrates all three into a single **glove-worn** device — chosen over a 
 | **2× Coin vibration motors** (driven via BC547 + flyback diode) | Distinct haptic feedback per alert type |
 | **Wearable glove** | Mechanical housing/mounting for all of the above |
 
-See [`hardware/bill-of-materials.csv`](hardware/bill-of-materials.csv) for the full parts list, and [`firmware/README.md`](firmware/README.md) for the exact pin mapping.
+See [`hardware/bill-of-materials.csv`](bill-of-materials.csv) for the full parts list, and [`firmware/README.md`](README1.md) for the exact pin mapping.
 
 > 💡 Powered via USB (5V regulated) from a laptop for this prototype stage — battery/regulator integration is on the [roadmap](#-roadmap).
 
@@ -174,7 +174,7 @@ ARAS-Wearable-Safety-System/
 ### Firmware (ESP32)
 1. Open `firmware/ARAS_Glove_Firmware.ino` in the Arduino IDE.
 2. Install libraries: `Wire` (built-in), `MPU6050` (Electronic Cats / jrowberg i2cdevlib), `MAX30105` (SparkFun MAX3010x), `BluetoothSerial` (built-in ESP32 core).
-3. Wire the sensors per [`firmware/README.md`](firmware/README.md).
+3. Wire the sensors per [`firmware/README.md`](README1.md).
 4. Flash to the ESP32 (board: "ESP32 Dev Module"). On boot it advertises Bluetooth as `ARAS_GLOVE`.
 
 ### Android App
@@ -194,9 +194,9 @@ ARAS-Wearable-Safety-System/
 
 ## 🔌 Circuit Diagram
 
-![Circuit Diagram](images/circuit-diagram.svg)
+![Circuit Diagram](circuit-diagram.svg)
 
-Full pin-level wiring notes: [`firmware/README.md`](firmware/README.md)
+Full pin-level wiring notes: [`firmware/README.md`](README1.md)
 
 ---
 
