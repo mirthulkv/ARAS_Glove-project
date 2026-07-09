@@ -2,10 +2,6 @@
 
 > A glove-mounted embedded safety device for motorcycle/two-wheeler riders that fuses heart-rate-variability–based drowsiness detection, bidirectional radar collision sensing, and IMU-based accident detection — with automatic Bluetooth-to-SMS emergency SOS alerts and dual-channel haptic feedback.
 
-![Status](https://img.shields.io/badge/status-prototype%20(TRL--4)-yellow)
-![License](https://img.shields.io/badge/license-MIT-blue)
-![Platform](https://img.shields.io/badge/firmware-ESP32%20%2F%20Arduino-blue)
-![App](https://img.shields.io/badge/companion%20app-Android%20(Kotlin)-3DDC84)
 
 ---
 
