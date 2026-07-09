@@ -1,0 +1,113 @@
+<svg viewBox="0 0 720 900" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .box { fill: #ffffff; stroke: #222222; stroke-width: 2; }
+    .decision { fill: #fff7e6; stroke: #222222; stroke-width: 2; }
+    .action { fill: #e8f4ff; stroke: #222222; stroke-width: 2; }
+    .terminal { fill: #eeeeee; stroke: #222222; stroke-width: 2; }
+    .label { fill: #111111; font-size: 13px; }
+    .small { fill: #333333; font-size: 11px; }
+    .title { fill: #111111; font-size: 16px; font-weight: bold; }
+    .arrow { stroke: #222222; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#222222"/>
+    </marker>
+  </defs>
+
+  <text x="140" y="25" class="title">ARAS Safety System — Decision Flow</text>
+
+  <!-- Start -->
+  <ellipse cx="360" cy="60" rx="60" ry="22" class="terminal"/>
+  <text x="340" y="65" class="label">Start</text>
+
+  <!-- Power on -->
+  <rect x="230" y="105" width="260" height="40" rx="6" class="action"/>
+  <text x="250" y="130" class="label">Power ON — ESP32 Initialization</text>
+
+  <!-- Init sensors -->
+  <rect x="200" y="165" width="320" height="50" rx="6" class="action"/>
+  <text x="220" y="185" class="label">Initialize Sensors</text>
+  <text x="220" y="200" class="small">(MAX30102, MPU6050, RCWL-0516)</text>
+
+  <!-- BT connect -->
+  <rect x="200" y="235" width="320" height="40" rx="6" class="action"/>
+  <text x="215" y="260" class="label">Establish Bluetooth Connection with Phone</text>
+
+  <!-- Loop start -->
+  <rect x="190" y="295" width="340" height="40" rx="6" class="action"/>
+  <text x="230" y="320" class="label">Begin Continuous Monitoring Loop</text>
+
+  <!-- Data acquisition -->
+  <rect x="190" y="355" width="340" height="50" rx="6" class="action"/>
+  <text x="215" y="375" class="label">Sensor Data Acquisition</text>
+  <text x="215" y="390" class="small">(Heart Rate / HRV, Motion Data, Proximity Data)</text>
+
+  <!-- Processing -->
+  <rect x="190" y="425" width="340" height="40" rx="6" class="action"/>
+  <text x="210" y="450" class="label">Data Processing &amp; Condition Evaluation</text>
+
+  <!-- Decision 1: drowsy -->
+  <polygon points="360,480 500,530 360,580 220,530" class="decision"/>
+  <text x="270" y="522" class="label">Is rider drowsy?</text>
+  <text x="255" y="538" class="small">(RMSSD drop + low motion)</text>
+
+  <rect x="540" y="500" width="170" height="60" rx="6" class="action"/>
+  <text x="550" y="520" class="label">Trigger Haptic</text>
+  <text x="550" y="535" class="label">Motor 1 — Drowsiness</text>
+  <text x="550" y="550" class="small">alert (3 long pulses)</text>
+
+  <!-- Decision 2: object -->
+  <polygon points="360,610 500,660 360,710 220,660" class="decision"/>
+  <text x="245" y="652" class="label">Object within threshold?</text>
+  <text x="270" y="668" class="small">(RCWL-0516 radar)</text>
+
+  <rect x="540" y="630" width="170" height="60" rx="6" class="action"/>
+  <text x="550" y="650" class="label">Trigger Haptic</text>
+  <text x="550" y="665" class="label">Motor 2 — Collision</text>
+  <text x="550" y="680" class="small">alert (2 short pulses)</text>
+
+  <!-- Decision 3: accident -->
+  <polygon points="360,740 500,790 360,840 220,790" class="decision"/>
+  <text x="255" y="782" class="label">Accident detected?</text>
+  <text x="240" y="798" class="small">(sudden motion / impact &gt;3g)</text>
+
+  <rect x="540" y="760" width="170" height="70" rx="6" class="action"/>
+  <text x="555" y="778" class="label">Send SOS via</text>
+  <text x="555" y="793" class="label">Bluetooth →</text>
+  <text x="555" y="808" class="small">Phone sends SMS alert</text>
+  <text x="555" y="822" class="small">with GPS location</text>
+
+  <!-- No branches loop back -->
+  <text x="325" y="600" class="small">No</text>
+  <text x="325" y="730" class="small">No</text>
+  <text x="325" y="855" class="small">No</text>
+  <text x="505" y="510" class="small">Yes</text>
+  <text x="505" y="640" class="small">Yes</text>
+  <text x="505" y="770" class="small">Yes</text>
+
+  <!-- Normal operation label -->
+  <text x="240" y="865" class="small" font-style="italic">Normal operation → loop continues</text>
+
+  <!-- Arrows -->
+  <line x1="360" y1="82" x2="360" y2="105" class="arrow"/>
+  <line x1="360" y1="145" x2="360" y2="165" class="arrow"/>
+  <line x1="360" y1="215" x2="360" y2="235" class="arrow"/>
+  <line x1="360" y1="275" x2="360" y2="295" class="arrow"/>
+  <line x1="360" y1="335" x2="360" y2="355" class="arrow"/>
+  <line x1="360" y1="405" x2="360" y2="425" class="arrow"/>
+  <line x1="360" y1="465" x2="360" y2="480" class="arrow"/>
+  <line x1="500" y1="530" x2="540" y2="530" class="arrow"/>
+  <line x1="360" y1="580" x2="360" y2="610" class="arrow"/>
+  <line x1="500" y1="660" x2="540" y2="660" class="arrow"/>
+  <line x1="360" y1="710" x2="360" y2="740" class="arrow"/>
+  <line x1="500" y1="790" x2="540" y2="790" class="arrow"/>
+
+  <!-- loop back from bottom of each decision's "No" and from action boxes back to loop start -->
+  <path d="M 220 530 L 130 530 L 130 315 L 190 315" class="arrow" fill="none"/>
+  <path d="M 220 660 L 100 660 L 100 315 L 190 315" class="arrow" fill="none"/>
+  <path d="M 220 790 L 70 790 L 70 315 L 190 315" class="arrow" fill="none"/>
+  <path d="M 625 560 L 625 315 L 530 315" class="arrow" fill="none"/>
+  <path d="M 625 690 L 660 690 L 660 315 L 530 315" class="arrow" fill="none"/>
+  <path d="M 625 830 L 690 830 L 690 315 L 530 315" class="arrow" fill="none"/>
+</svg>

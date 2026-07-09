@@ -1,0 +1,124 @@
+<svg viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .box { fill: #ffffff; stroke: #222222; stroke-width: 2; }
+    .label { fill: #111111; font-size: 14px; font-weight: bold; }
+    .small { fill: #333333; font-size: 11px; }
+    .title { fill: #111111; font-size: 18px; font-weight: bold; }
+    .wire-pwr { stroke: #cc2222; stroke-width: 1.5; fill: none; }
+    .wire-gnd { stroke: #222222; stroke-width: 1.5; fill: none; }
+    .wire-i2c { stroke: #2255cc; stroke-width: 1.5; fill: none; }
+    .wire-sig { stroke: #22aacc; stroke-width: 1.5; fill: none; }
+    .wire-gpio { stroke: #aa22aa; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <text x="230" y="30" class="title">ARAS Glove — System Circuit Diagram</text>
+
+  <!-- Legend -->
+  <rect x="770" y="15" width="215" height="115" class="box" fill="#fafafa"/>
+  <text x="780" y="32" class="small" font-weight="bold">Color Code</text>
+  <line x1="780" y1="42" x2="805" y2="42" class="wire-pwr"/><text x="810" y="46" class="small">5V / 3.3V (VCC)</text>
+  <line x1="780" y1="57" x2="805" y2="57" class="wire-gnd"/><text x="810" y="61" class="small">GND</text>
+  <line x1="780" y1="72" x2="805" y2="72" class="wire-i2c"/><text x="810" y="76" class="small">I2C SDA/SCL</text>
+  <line x1="780" y1="87" x2="805" y2="87" class="wire-sig"/><text x="810" y="91" class="small">Digital signal (radar)</text>
+  <line x1="780" y1="102" x2="805" y2="102" class="wire-gpio"/><text x="810" y="106" class="small">GPIO (motor control)</text>
+
+  <!-- MAX30102 -->
+  <rect x="40" y="150" width="150" height="90" class="box"/>
+  <text x="50" y="170" class="label">MAX30102</text>
+  <text x="50" y="185" class="small">Pulse Sensor Module</text>
+  <text x="50" y="205" class="small">VCC</text>
+  <text x="50" y="220" class="small">GND</text>
+  <text x="50" y="235" class="small">SDA / SCL</text>
+
+  <!-- MPU6050 -->
+  <rect x="260" y="120" width="150" height="110" class="box"/>
+  <text x="270" y="140" class="label">MPU6050</text>
+  <text x="270" y="155" class="small">IMU Sensor</text>
+  <text x="270" y="175" class="small">3.3V</text>
+  <text x="270" y="190" class="small">GND</text>
+  <text x="270" y="205" class="small">SDA</text>
+  <text x="270" y="220" class="small">SCL</text>
+
+  <!-- ESP32 central -->
+  <rect x="470" y="90" width="230" height="360" class="box"/>
+  <text x="515" y="115" class="label">ESP32 Dev Board</text>
+  <text x="500" y="130" class="small">(Central Controller)</text>
+  <text x="480" y="155" class="small">3.3V</text>
+  <text x="480" y="170" class="small">GND</text>
+  <text x="480" y="195" class="small">GPIO21 (SDA)</text>
+  <text x="480" y="210" class="small">GPIO22 (SCL)</text>
+  <text x="480" y="235" class="small">GPIO25</text>
+  <text x="480" y="250" class="small">GPIO26</text>
+  <text x="480" y="275" class="small">GPIO34</text>
+  <text x="660" y="155" class="small">5V</text>
+  <text x="660" y="170" class="small">GND</text>
+  <text x="620" y="400" class="small">VIN / USB 5V</text>
+  <text x="620" y="415" class="small">GND</text>
+
+  <!-- RCWL-0516 -->
+  <rect x="800" y="150" width="150" height="90" class="box"/>
+  <text x="810" y="170" class="label">RCWL-0516</text>
+  <text x="810" y="185" class="small">Microwave Radar</text>
+  <text x="810" y="205" class="small">5V</text>
+  <text x="810" y="220" class="small">GND</text>
+  <text x="810" y="235" class="small">OUT</text>
+
+  <!-- Motor 1 (left) -->
+  <circle cx="110" cy="380" r="30" class="box"/>
+  <text x="100" y="386" class="label">M1</text>
+  <text x="35" y="425" class="small">Vibration Motor</text>
+  <text x="35" y="440" class="small">(Drowsiness Alert)</text>
+  <!-- transistor driver -->
+  <rect x="150" y="365" width="50" height="30" class="box"/>
+  <text x="155" y="384" class="small">BC547</text>
+  <text x="150" y="410" class="small">1k</text>
+  <text x="80" y="345" class="small">5V</text>
+  <text x="220" y="345" class="small">Flyback 1N4007</text>
+
+  <!-- Motor 2 (right) -->
+  <circle cx="900" cy="380" r="30" class="box"/>
+  <text x="890" y="386" class="label">M2</text>
+  <text x="855" y="425" class="small">Vibration Motor</text>
+  <text x="845" y="440" class="small">(Collision Alert)</text>
+  <rect x="800" y="365" width="50" height="30" class="box"/>
+  <text x="805" y="384" class="small">BC547</text>
+  <text x="815" y="410" class="small">1k</text>
+  <text x="920" y="345" class="small">5V</text>
+  <text x="770" y="345" class="small">Flyback 1N4007</text>
+
+  <!-- USB power -->
+  <rect x="540" y="500" width="120" height="60" class="box"/>
+  <text x="555" y="525" class="small" font-weight="bold">USB Power</text>
+  <text x="550" y="540" class="small">from Laptop (5V)</text>
+
+  <!-- WIRES -->
+  <!-- MAX30102 to ESP32 I2C -->
+  <line x1="190" y1="205" x2="480" y2="195" class="wire-i2c"/>
+  <line x1="190" y1="220" x2="480" y2="210" class="wire-i2c"/>
+  <line x1="190" y1="185" x2="440" y2="155" class="wire-pwr"/>
+  <line x1="190" y1="220" x2="440" y2="170" class="wire-gnd"/>
+
+  <!-- MPU6050 to ESP32 I2C -->
+  <line x1="410" y1="205" x2="480" y2="195" class="wire-i2c"/>
+  <line x1="410" y1="220" x2="480" y2="210" class="wire-i2c"/>
+  <line x1="410" y1="175" x2="480" y2="155" class="wire-pwr"/>
+  <line x1="410" y1="190" x2="480" y2="170" class="wire-gnd"/>
+
+  <!-- RCWL to ESP32 GPIO34 -->
+  <line x1="800" y1="205" x2="700" y2="275" class="wire-sig"/>
+  <line x1="800" y1="220" x2="700" y2="170" class="wire-gnd"/>
+  <line x1="800" y1="190" x2="700" y2="155" class="wire-pwr"/>
+
+  <!-- ESP32 GPIO25 to Motor1 driver -->
+  <line x1="480" y1="235" x2="200" y2="380" class="wire-gpio"/>
+  <line x1="150" y1="380" x2="140" y2="380" class="wire-gnd"/>
+
+  <!-- ESP32 GPIO26 to Motor2 driver -->
+  <line x1="700" y1="250" x2="800" y2="380" class="wire-gpio"/>
+  <line x1="850" y1="380" x2="870" y2="380" class="wire-gnd"/>
+
+  <!-- USB to ESP32 -->
+  <line x1="600" y1="500" x2="600" y2="450" class="wire-pwr"/>
+
+  <text x="330" y="590" class="small" font-style="italic">Fig: Circuit Diagram of the ARAS Wearable Two-Wheeler Safety System</text>
+</svg>
