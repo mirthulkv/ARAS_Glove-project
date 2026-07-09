@@ -202,7 +202,7 @@ Full pin-level wiring notes: [`firmware/README.md`](firmware/README.md)
 
 ## 🔄 System Flow
 
-![System Flowchart](images/system-flowchart.svg)
+![System Flowchart](system-flowchart.svg)
 
 ---
 
@@ -220,7 +220,7 @@ Tested indoors in a controlled bench setup (USB-powered, glove-mounted sensors):
 | Power supply stability | 5V USB regulated | Stable during full operation |
 | Estimated system cost | ~₹1200–₹1500 (~$15–18) | Cost-effective vs. commercial ADAS |
 
-Full write-up: [`docs/testing-results.md`](docs/testing-results.md)
+Full write-up: [`docs/testing-results.md`](testing-results.md)
 
 ---
 
@@ -234,7 +234,7 @@ Full write-up: [`docs/testing-results.md`](docs/testing-results.md)
 | Front-only collision detection | Radar module supports bidirectional (front/rear) proximity sensing |
 | Health monitoring decoupled from safety response | HRV drop is tightly coupled into the same priority-based alert engine |
 
-Full prior-art comparison and patent/publication references: [`docs/invention-disclosure-summary.md`](docs/invention-disclosure-summary.md)
+Full prior-art comparison and patent/publication references: [`docs/invention-disclosure-summary.md`](invention-disclosure-summary.md)
 
 ---
 
@@ -275,4 +275,4 @@ Released under the [MIT License](LICENSE) — free to use, modify, and build upo
 
 ## 👤 Author
 
-Developed as part of an embedded systems / IoT rider-safety research project (Invention Disclosure Format submitted at Vellore Institute of Technology). See [`docs/invention-disclosure-summary.md`](docs/invention-disclosure-summary.md) for the full prior-art review and patent landscape this work builds on.
+Developed as part of an embedded systems / IoT rider-safety research project (Invention Disclosure Format submitted at Vellore Institute of Technology). See [`docs/invention-disclosure-summary.md`](invention-disclosure-summary.md) for the full prior-art review and patent landscape this work builds on.
