@@ -5,4 +5,4 @@
 
 ## 📷 Hardware photos 
 
-Glove_hardware.jpg
+-`Glove_hardware.jpg`
