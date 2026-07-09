@@ -196,7 +196,7 @@ ARAS-Wearable-Safety-System/
 
 ![Circuit Diagram](circuit-diagram.svg)
 
-Full pin-level wiring notes: [`firmware/README.md`](README1.md)
+Full pin-level wiring notes: [`firmware/README.md`](README2.md)
 
 ---
 
