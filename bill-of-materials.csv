@@ -1,0 +1,13 @@
+Item No,Component,Quantity,Function
+1,ESP32 Dev Board,1,Central controller with integrated Bluetooth
+2,MAX30102 Pulse Oximeter / Heart Rate Sensor (HW-605 breakout),1,PPG signal acquisition for HRV-based drowsiness detection
+3,MPU-6050 6-axis IMU,1,Motion/acceleration sensing for accident and low-motion detection
+4,RCWL-0516 Microwave Radar Motion Sensor,1,Proximity/collision detection
+5,Coin Vibration Motor,2,Haptic feedback (1 for drowsiness, 1 for collision)
+6,BC547 NPN Transistor,2,Motor driver switching (1 per motor)
+7,1N4007 Diode,2,Flyback protection for each vibration motor
+8,1k Ohm Resistor,2,Base current limiting resistor for BC547 driver
+9,Wearable Glove,1,Mechanical housing/mount for all electronics
+10,Jumper Wires,As needed,Circuit connections
+11,USB Cable (5V power),1,Power supply for prototype (laptop-powered)
+12,Android Smartphone (API 23+),1,Companion app host - BT + GPS + SMS
