@@ -106,7 +106,7 @@ ARAS integrates all three into a single **glove-worn** device — chosen over a 
 See [`hardware/bill-of-materials.csv`](bill-of-materials.csv) for the full parts list, and [`firmware/README.md`](README2.md) for the exact pin mapping.
 
 > 💡 Powered via USB (5V regulated) from a laptop for this prototype stage — battery/regulator integration is on the [roadmap](#-roadmap).
-For full hardware setup,view [`firmware/README.md`](Glove_hardware.jpg)
+For full hardware setup,view [`README1.md`](Glove_hardware.jpg)
 ---
 
 ## 🧠 How the Safety Algorithms Work
